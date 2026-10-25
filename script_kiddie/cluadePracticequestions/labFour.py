@@ -7,7 +7,7 @@
 import csv
 
 CSV_HEADERS = ["Name", "Age", "Grade", "GPA"]
-OUTPUT_FILENAME = "students.csv"
+OUTPUT_FILENAME = "script_kiddie\cluadePracticequestions\students.csv"
 
 
 def write_header(csv_writer):
