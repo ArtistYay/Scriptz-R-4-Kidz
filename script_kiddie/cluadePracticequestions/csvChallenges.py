@@ -3,8 +3,8 @@ import csv
 """Practice Problem: Write a script that reads a CSV file containing employee names and salaries.
  Calculate the average salary and write the results (Original Data + Average) into a new CSV file.
 
-Exercise Purpose: CSV (Comma-Separated Values) is the most common format for data exchange. 
-This exercise teaches you to use the built-in csv module, specifically DictReader and DictWriter, 
+Exercise Purpose: CSV (Comma-Separated Values) is the most common format for data exchange.
+This exercise teaches you to use the built-in csv module, specifically DictReader and DictWriter,
 which allow you to treat rows as dictionaries rather than just lists of strings."""
 
 
@@ -52,7 +52,7 @@ def process_salaries(input_file, output_file):
 # Explanation
 
 
-"""DictReader: This is safer than basic reader because it lets you access columns by name (row['Salary']) rather than index (row[1]). 
+"""DictReader: This is safer than basic reader because it lets you access columns by name (row['Salary']) rather than index (row[1]).
 This makes your code break-resistant if columns are rearranged.
 
 newline='': This is a standard Python practice when opening files for the csv module to prevent blank lines from being inserted between rows on different operating systems.
