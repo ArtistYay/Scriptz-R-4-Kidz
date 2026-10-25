@@ -2,10 +2,10 @@
 
 **Objective:** Write a function that validates employee IDs against a specific format.
 
-**Instructions:** Complete the function that checks if each employee ID follows the format: 
+**Instructions:** Complete the function that checks if each employee ID follows the format:
 3 uppercase letters followed by exactly 5 digits (e.g., "ABC12345")."""
 
-#def validate_employee_ids(id_list):
+# def validate_employee_ids(id_list):
 #    # Check if each ID matches format: 3 uppercase letters + 5 digits
 #    # Use string slicing and if/then statements with boolean matching
 #    # Return a list of boolean values (True for valid, False for invalid)
@@ -21,8 +21,8 @@
 #    return passingID
 #
 ## Test data
-#employee_ids = ["ABC12345", "XYZ67890", "ab12345", "ABC1234", "DEF123456", "GHI98765"]
-#print(validate_employee_ids(employee_ids))
+# employee_ids = ["ABC12345", "XYZ67890", "ab12345", "ABC1234", "DEF123456", "GHI98765"]
+# print(validate_employee_ids(employee_ids))
 # Expected output: [True, True, False, False, False, True]
 
 """ Lab 3: Find Index of Values Meeting Threshold
@@ -31,7 +31,7 @@
 
 **Instructions:** Complete the function that returns a list of index positions where the float values are greater than or equal to the threshold."""
 
-#def find_threshold_indices(float_list, threshold):
+# def find_threshold_indices(float_list, threshold):
 #    # Return list of indices where values >= threshold
 #    indexList = []
 #    i = 0
@@ -42,11 +42,10 @@
 #    return indexList
 
 ## Test data
-#numbers = [2.5, 8.7, 3.2, 9.1, 1.8, 7.4, 5.6]
-#threshold = 7.0
-#print(find_threshold_indices(numbers, threshold))
+# numbers = [2.5, 8.7, 3.2, 9.1, 1.8, 7.4, 5.6]
+# threshold = 7.0
+# print(find_threshold_indices(numbers, threshold))
 ## Expected output: [1, 3, 5]
-
 
 
 """Lab 5: Read Data from CSV File
@@ -57,10 +56,12 @@
 
 import csv
 
+
 def read_student_data(filename):
     # Read CSV file and return as list of dictionaries
     # Each dictionary should have keys: Name, Age, Grade, GPA
     pass
+
 
 # Test the function
 students = read_student_data("students.csv")
@@ -74,10 +75,12 @@ for student in students:
 
 **Instructions:** Complete the function that takes a list of integers representing RGB values and returns a formatted RGB color string."""
 
+
 def format_rgb_color(rgb_values):
     # Combine RGB values into format "R,G,B" with no spaces
     # Handle cases where list might not have exactly 3 values
     pass
+
 
 # Test data
 rgb1 = [47, 244, 97]
@@ -85,7 +88,7 @@ rgb2 = [255, 128, 0]
 rgb3 = [0, 0, 0]
 
 print(format_rgb_color(rgb1))  # Expected: "47,244,97"
-print(format_rgb_color(rgb2))  # Expected: "255,128,0" 
+print(format_rgb_color(rgb2))  # Expected: "255,128,0"
 print(format_rgb_color(rgb3))  # Expected: "0,0,0"
 
 """ Practice Tips:

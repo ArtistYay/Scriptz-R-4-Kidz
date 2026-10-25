@@ -11,11 +11,13 @@ Expected Output:
 The result is 600
 The result is 70"""
 
-def function (num_1, num_2):
+
+def function(num_1, num_2):
     product = num_1 * num_2
     if product <= 1000:
         return product
     else:
         return num_1 + num_2
-    
+
+
 print(function(40, 30))

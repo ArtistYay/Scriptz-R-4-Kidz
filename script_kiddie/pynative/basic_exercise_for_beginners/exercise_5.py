@@ -9,6 +9,7 @@ Expected Output:
 Before Swap: a = 5, b = 10
 After Swap: a = 10, b = 5"""
 
+
 def function(a, b):
     return f"Before Swap: a = {a}, b = {b}"
     a = b

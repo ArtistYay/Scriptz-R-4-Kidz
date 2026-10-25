@@ -13,6 +13,7 @@ def get_rounds(number):
         rounds.append(item + number)
     return rounds
 
+
 def concatenate_rounds(rounds_1, rounds_2):
     """Concatenate two lists of round numbers.
 
@@ -21,6 +22,7 @@ def concatenate_rounds(rounds_1, rounds_2):
     :return: list - all rounds played.
     """
     return rounds_1 + rounds_2
+
 
 def list_contains_round(rounds, number):
     """Check if the list of rounds contains the specified number.
@@ -39,6 +41,7 @@ def list_contains_round(rounds, number):
     else:
         return False
 
+
 def card_average(hand):
     """Calculate and returns the average card value from the list.
 
@@ -47,6 +50,7 @@ def card_average(hand):
     """
 
     return sum(hand) / len(hand)
+
 
 def approx_average_is_average(hand):
     """Return if the (average of first and last card values) OR ('middle' card) == calculated average.
@@ -59,11 +63,12 @@ def approx_average_is_average(hand):
     middle_card = hand[len(hand) // 2]
     first_and_last_average = (hand[0] + hand[-1]) / 2
 
-    if  first_and_last_average == average or middle_card == average:
+    if first_and_last_average == average or middle_card == average:
         return True
     else:
         return False
-    
+
+
 def average_even_is_average_odd(hand):
     """Return if the (average of even indexed card values) == (average of odd indexed card values).
 

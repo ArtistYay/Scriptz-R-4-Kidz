@@ -13,11 +13,13 @@ n
 t
 v"""
 
+
 def function(user_word):
-    print(f'Original String is {user_word}')
+    print(f"Original String is {user_word}")
     print("Printing only even index chars")
     for i in range(len(user_word)):
         if i % 2 == 0:
             print(user_word[i])
+
 
 print(function("pynative"))

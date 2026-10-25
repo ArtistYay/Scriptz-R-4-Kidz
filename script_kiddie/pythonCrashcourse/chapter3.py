@@ -1,9 +1,11 @@
-"""Store the names of a few of your friends in a list called names. Print 
+"""Store the names of a few of your friends in a list called names. Print
 each person’s name by accessing each element in the list, one at a time."""
+
 
 def friends(name_of_friends):
     for x in name_of_friends:
         print(x)
+
 
 peopleIknow = ["Kzar", "Ari", "Morgan"]
 
@@ -14,9 +16,11 @@ printing each person’s name, print a message to them. The text of each message
 but each message should be personalized with the 
 person’s name"""
 
+
 def friends(name_of_friends):
     for x in name_of_friends:
         print(f"{x} is a good friend of mine.")
+
 
 peopleIknow = ["Kzar", "Ari", "Morgan"]
 
@@ -27,9 +31,11 @@ motorcycle or a car, and make a list that stores several examples. Use your list
 to print a series of statements about these items, such as “I would like to own a 
 Honda motorcycle."""
 
-def dreamCars (car):
+
+def dreamCars(car):
     for x in car:
         print(f"I would love to own a {x} one day.")
+
 
 carsIwant = ["Barbus G Wagon", "Shelby Truck", "Nissan GTR"]
 
@@ -100,7 +106,6 @@ know they’re still invited.
 • Use del to remove the last two names from your list, so you have an empty 
 list. Print your list to make sure you actually have an empty list at the end of 
 your program"""
-
 
 
 """Think of at least five places in the world you’d like to visit.

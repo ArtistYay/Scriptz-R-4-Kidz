@@ -1,5 +1,5 @@
-print('''WELCOME TO OUR USELESS STORE!
-*****************************''')
+print("""WELCOME TO OUR USELESS STORE!
+*****************************""")
 
 itemPurchasing = input("What item are you purchasing? ")
 

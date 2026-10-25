@@ -1,17 +1,20 @@
 from pathlib import Path
+
+
 def txt_to_list(file_path):
     file_list = []
     clean = Path(file_path.strip())
     file_list.append(clean)
     return file_list
-    #list_file = []
-    #file = open(file_path, "r")
-    #line = file.readline()
-    #while line:
+    # list_file = []
+    # file = open(file_path, "r")
+    # line = file.readline()
+    # while line:
     #    list_file.append(line.strip())
     #    line = file.readline()
-    #file.close()
-    #return list_file
+    # file.close()
+    # return list_file
+
 
 # You may alter the code below to view your return value(s).
 # Only the txt_to_list function will be graded for this assessment.

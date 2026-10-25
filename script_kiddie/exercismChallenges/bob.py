@@ -14,4 +14,4 @@ def response(hey_bob):
     elif is_question:
         return "Sure."
     else:
-        return "Whatever."   
+        return "Whatever."
