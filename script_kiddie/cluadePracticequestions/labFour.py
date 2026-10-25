@@ -6,22 +6,31 @@
 
 import csv
 
+CSV_HEADERS = ["Name", "Age", "Grade", "GPA"]
+OUTPUT_FILENAME = "students.csv"
+
+
+def write_header(csv_writer):
+    """Write the column header row."""
+    csv_writer.writerow(CSV_HEADERS)
+
+
+def write_student_rows(csv_writer, students):
+    """Write one CSV row per student record."""
+    for student_row in students:
+        csv_writer.writerow(student_row)
+
 
 def write_student_data(filename, students):
-    # Write student data to CSV file
-    # Include headers: Name, Age, Grade, GPA
-    with (
-        open(filename, "w", newline="") as file
-    ):  # first thing I need to do is open the file and write to it. Make sure there's a new line so data is not written on one line
-        writer = csv.writer(file)  # I'm not to sure with this line
-        writer.writerow(
-            ["Name", "Age", "Grade", "GPA"]
-        )  # takes the writer variable and writes the header information for the csv
-
-        for student in (
-            students
-        ):  # loops through student_data and gives it the variable of 'student'
-            writer.writerow(student)  # writes each row based on the list provided
+    """Write student records to a CSV file, header first."""
+    # newline="" lets the csv module control line endings itself.
+    # Without it, Windows adds an extra blank line between rows.
+    with open(filename, "w", newline="") as csv_file:
+        # csv.writer turns each list into one comma-separated line,
+        # adding quotes when a value contains a comma.
+        csv_writer = csv.writer(csv_file)
+        write_header(csv_writer)
+        write_student_rows(csv_writer, students)
 
 
 # Test data
@@ -32,5 +41,5 @@ student_data = [
     ["David Wilson", 22, "Senior", 3.5],
 ]
 
-write_student_data("students.csv", student_data)
-print("Data written to students.csv")
+write_student_data(OUTPUT_FILENAME, student_data)
+print(f"Data written to {OUTPUT_FILENAME}")

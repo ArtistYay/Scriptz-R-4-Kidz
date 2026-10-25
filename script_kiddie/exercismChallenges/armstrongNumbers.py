@@ -1,8 +1,8 @@
 def is_armstrong_number(number):
     digits = str(number)
-    lengthOfNumber = len(digits)
+    lengthofnumber = len(digits)
 
-    armstrongNumber = sum(int(digit) ** lengthOfNumber for digit in digits)
+    armstrongNumber = sum(int(digit) ** lengthofnumber for digit in digits)
 
     return armstrongNumber == number
 
