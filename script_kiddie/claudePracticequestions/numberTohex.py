@@ -1,3 +1,5 @@
+# NOTE: This script is not finished yet.
+
 """Format a hex color code Write a function called format_hex that accepts a list of three integers (each between 0 and 255)
 representing RGB values and returns a hex color string. The result should be uppercase and start with #."""
 

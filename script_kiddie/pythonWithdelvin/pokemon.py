@@ -1,20 +1,20 @@
 class Pokemon:
     # Parameterized constructor
-    def __init__(self, name, make, weakness, color):
+    def __init__(self, name, pokemon_type, weakness, color):
         self.name = name  # Initializes the 'name' attribute
-        self.make = make
+        self.pokemon_type = pokemon_type
         self.weakness = weakness
         self.color = color
         print(
-            f"{self.name} is a {self.make} type which is weak aganist {self.weakness}!"
+            f"{self.name} is a {self.pokemon_type} type which is weak aganist {self.weakness}!"
         )
-        self.my_per = Personality()
+        self.personality = Personality()
 
     def attack(self):
         if self.name == "Bisharp":
-            print(f"Bisharp kills Gengar")
+            print("Bisharp kills Gengar")
         else:
-            print(f"Gengar dies to Bisharp")
+            print("Gengar dies to Bisharp")
 
     def shiny(self):
         if self.color == "Blue" or self.color == "White":
@@ -25,11 +25,11 @@ class Pokemon:
 
 class Personality:
     def __init__(self):
-        isKind = input("Are you kind? ")
-        print("Artist is kind?, " + isKind)
-        isSmart = input("Are you smart? ")
-        isFun = input("Are you adventorus? ")
-        isHumorous = input("Are you funny? ")
+        is_kind = input("Are you kind? ")
+        print("Artist is kind?, " + is_kind)
+        is_smart = input("Are you smart? ")
+        is_adventurous = input("Are you adventorus? ")
+        is_funny = input("Are you funny? ")
 
 
 class Bisharp(Pokemon):

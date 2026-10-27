@@ -1,13 +1,13 @@
 print("""WELCOME TO OUR USELESS STORE!
 *****************************""")
 
-itemPurchasing = input("What item are you purchasing? ")
+item_name = input("What item are you purchasing? ")
 
-priceOfItem = float(input(f"What is the price of {itemPurchasing}? "))
+item_price = float(input(f"What is the price of {item_name}? "))
 
-quantityOfItem = int(input(f"How many {itemPurchasing} are you buying? "))
+item_quantity = int(input(f"How many {item_name} are you buying? "))
 
-subtotal = priceOfItem * quantityOfItem
+subtotal = item_price * item_quantity
 
-print(f"Added {quantityOfItem} {itemPurchasing}(s) to shopping cart.")
+print(f"Added {item_quantity} {item_name}(s) to shopping cart.")
 print(f"Subtotal: ${subtotal}")

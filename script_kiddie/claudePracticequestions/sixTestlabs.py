@@ -1,3 +1,5 @@
+# NOTE: This script is not finished yet (Lab 5 and Lab 6 are incomplete).
+
 """Lab 2: Employee ID Validation
 
 **Objective:** Write a function that validates employee IDs against a specific format.

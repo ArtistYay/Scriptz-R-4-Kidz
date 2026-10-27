@@ -1,15 +1,17 @@
+# NOTE: This script is not finished yet (Exercises 3-7 and 3-8 are incomplete).
+
 """Store the names of a few of your friends in a list called names. Print
 each person’s name by accessing each element in the list, one at a time."""
 
 
-def friends(name_of_friends):
-    for x in name_of_friends:
-        print(x)
+def print_friend_names(friend_names):
+    for friend in friend_names:
+        print(friend)
 
 
-peopleIknow = ["Kzar", "Ari", "Morgan"]
+people_i_know = ["Kzar", "Ari", "Morgan"]
 
-friends(peopleIknow)
+print_friend_names(people_i_know)
 
 """Start with the list you used in Exercise 3-1, but instead of just
 printing each person’s name, print a message to them. The text of each message should be the same,
@@ -17,14 +19,14 @@ but each message should be personalized with the
 person’s name"""
 
 
-def friends(name_of_friends):
-    for x in name_of_friends:
-        print(f"{x} is a good friend of mine.")
+def print_friend_messages(friend_names):
+    for friend in friend_names:
+        print(f"{friend} is a good friend of mine.")
 
 
-peopleIknow = ["Kzar", "Ari", "Morgan"]
+people_i_know = ["Kzar", "Ari", "Morgan"]
 
-friends(peopleIknow)
+print_friend_messages(people_i_know)
 
 """Think of your favorite mode of transportation, such as a
 motorcycle or a car, and make a list that stores several examples. Use your list
@@ -32,14 +34,14 @@ to print a series of statements about these items, such as “I would like to ow
 Honda motorcycle."""
 
 
-def dreamCars(car):
-    for x in car:
-        print(f"I would love to own a {x} one day.")
+def print_dream_cars(cars):
+    for car in cars:
+        print(f"I would love to own a {car} one day.")
 
 
-carsIwant = ["Barbus G Wagon", "Shelby Truck", "Nissan GTR"]
+dream_cars = ["Barbus G Wagon", "Shelby Truck", "Nissan GTR"]
 
-dreamCars(carsIwant)
+print_dream_cars(dream_cars)
 
 """If you could invite anyone, living or deceased, to dinner, who
 would you invite?
@@ -48,10 +50,15 @@ Make a list that includes at least three people you’d like to invite to dinner
 
 Then use your list to print a message to each person, inviting them to dinner."""
 
-IdontCare = ["Micheal Jackson", "God", "The World's Richest Man in the World"]
 
-for x in IdontCare:
-    print(f"Dear {x}, please have dinner with me. Thanks.")
+def send_dinner_invitations(guests):
+    for guest in guests:
+        print(f"Dear {guest}, please have dinner with me. Thanks.")
+
+
+dinner_guests = ["Micheal Jackson", "God", "The World's Richest Man in the World"]
+
+send_dinner_invitations(dinner_guests)
 
 """You just heard that one of your guests can’t make the
 dinner, so you need to send out a new set of invitations. You’ll have to think of
@@ -66,10 +73,10 @@ name of the new person you are inviting.
 • Print a second set of invitation messages, one for each person who is still in
 your list"""
 
-notComingtoDinner = IdontCare.pop(1)
-print(f"{notComingtoDinner} is not coming to dinner.")
+guest_not_coming = dinner_guests.pop(1)
+print(f"{guest_not_coming} is not coming to dinner.")
 
-IdontCare.insert(1, "Jesus Christ")
+dinner_guests.insert(1, "Jesus Christ")
 
 """You just found a bigger dinner table, so now more space is
 available. Think of three more guests to invite to dinner.
@@ -82,12 +89,11 @@ end of your program, informing people that you found a bigger table.
 
 print("I found a bigger table!")
 
-IdontCare.insert(0, "Anakin Skywalker")
-IdontCare.insert(2, "Malcolm X")
-IdontCare.append("Random Russain guy")
+dinner_guests.insert(0, "Anakin Skywalker")
+dinner_guests.insert(2, "Malcolm X")
+dinner_guests.append("Random Russain guy")
 
-for x in IdontCare:
-    print(f"Dear {x}, please have dinner with me. Thanks.")
+send_dinner_invitations(dinner_guests)
 
 """You just found out that your new dinner table won’t
 arrive in time for the dinner, and now you have space for only two guests.

@@ -1,32 +1,32 @@
 def exchange_money(budget, exchange_rate):
-    money = budget / exchange_rate
-    return money
+    exchanged_amount = budget / exchange_rate
+    return exchanged_amount
 
 
 def get_change(budget, exchanging_value):
-    money2 = budget - exchanging_value
-    return money2
+    change = budget - exchanging_value
+    return change
 
 
 def get_value_of_bills(denomination, number_of_bills):
-    money3 = denomination * number_of_bills
-    return money3
+    total_value = denomination * number_of_bills
+    return total_value
 
 
 print(get_value_of_bills(5, 128))
 
 
 def get_number_of_bills(amount, denomination):
-    money4 = amount // denomination
-    return int(money4)
+    bill_count = amount // denomination
+    return int(bill_count)
 
 
 print(get_number_of_bills(127.5, 5))
 
 
 def get_leftover_of_bills(amount, denomination):
-    money5 = amount % denomination
-    return float(money5)
+    leftover = amount % denomination
+    return float(leftover)
 
 
 def exchangeable_value(budget, exchange_rate, spread, denomination):

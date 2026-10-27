@@ -30,10 +30,10 @@
 # help(help)
 
 # Write your code here.
-def validate_id(id):
-    if len(id) != 8:
+def validate_id(employee_id):
+    if len(employee_id) != 8:
         return False
-    elif id[:3].isupper() and type(int(id[3:])) == int:
+    elif employee_id[:3].isupper() and employee_id[3:].isdecimal():
         return True
     else:
         return False

@@ -1,10 +1,10 @@
 def is_armstrong_number(number):
     digits = str(number)
-    lengthofnumber = len(digits)
+    digit_count = len(digits)
 
-    armstrongNumber = sum(int(digit) ** lengthofnumber for digit in digits)
+    digit_power_sum = sum(int(digit) ** digit_count for digit in digits)
 
-    return armstrongNumber == number
+    return digit_power_sum == number
 
 
 print(is_armstrong_number(153))  # True

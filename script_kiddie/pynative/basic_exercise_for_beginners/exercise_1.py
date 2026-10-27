@@ -12,7 +12,7 @@ The result is 600
 The result is 70"""
 
 
-def function(num_1, num_2):
+def product_or_sum(num_1, num_2):
     product = num_1 * num_2
     if product <= 1000:
         return product
@@ -20,4 +20,4 @@ def function(num_1, num_2):
         return num_1 + num_2
 
 
-print(function(40, 30))
+print(product_or_sum(40, 30))

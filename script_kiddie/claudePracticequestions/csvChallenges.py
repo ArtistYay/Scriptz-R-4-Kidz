@@ -8,18 +8,31 @@ This exercise teaches you to use the built-in csv module, specifically DictReade
 which allow you to treat rows as dictionaries rather than just lists of strings."""
 
 
-def write_employee_info(filename):
+def read_employee_rows(filename):
     with open(filename, "r", newline="") as file:
-        employee_salary = []
         reader = csv.DictReader(file)
-        for salary in reader:
-            employee_salary.append(int(salary["Salary"]))
-        average = sum(employee_salary) / len(employee_salary)
+        return list(reader)
 
+
+def calculate_average_salary(employee_rows):
+    salaries = []
+    for row in employee_rows:
+        salaries.append(int(row["Salary"]))
+    return sum(salaries) / len(salaries)
+
+
+def append_average_row(filename, fieldnames, average):
     with open(filename, "a", newline="") as file:
         file.write("\n")
-        writer = csv.DictWriter(file, fieldnames=salary)
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writerow({"Name": "Average", "Salary": average})
+
+
+def write_employee_info(filename):
+    employee_rows = read_employee_rows(filename)
+    average = calculate_average_salary(employee_rows)
+    # The last row's keys are used as the column names.
+    append_average_row(filename, list(employee_rows[-1]), average)
 
 
 write_employee_info("data.csv")
@@ -32,8 +45,8 @@ def process_salaries(input_file, output_file):
     rows = []
 
     # Read the data
-    with open(input_file, mode="r", newline="") as f:
-        reader = csv.DictReader(f)
+    with open(input_file, mode="r", newline="") as file:
+        reader = csv.DictReader(file)
         for row in reader:
             salaries.append(int(row["Salary"]))
             rows.append(row)
@@ -42,8 +55,8 @@ def process_salaries(input_file, output_file):
 
     # Write the data
     fieldnames = ["Name", "Salary"]
-    with open(output_file, mode="w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+    with open(output_file, mode="w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
         writer.writerow({"Name": "Average", "Salary": avg_salary})

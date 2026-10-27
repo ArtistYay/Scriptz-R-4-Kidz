@@ -1,3 +1,5 @@
+# NOTE: This script is not finished yet.
+
 """Lab 1: Date Processing and Finding Oldest Date
 
 **Objective:** Convert a list of date strings to a specified format and find the oldest date.

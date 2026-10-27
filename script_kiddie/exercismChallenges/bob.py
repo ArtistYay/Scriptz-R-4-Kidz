@@ -1,11 +1,11 @@
 def response(hey_bob):
-    hey_bob_stripped = hey_bob.strip()
+    message = hey_bob.strip()
 
-    if not hey_bob_stripped:
+    if not message:
         return "Fine. Be that way!"
 
-    is_question = hey_bob_stripped[-1] == "?"
-    is_yelling = hey_bob_stripped.isupper()
+    is_question = message[-1] == "?"
+    is_yelling = message.isupper()
 
     if is_yelling and is_question:
         return "Calm down, I know what I'm doing!"

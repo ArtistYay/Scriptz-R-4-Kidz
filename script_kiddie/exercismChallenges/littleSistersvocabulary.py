@@ -1,6 +1,6 @@
 def add_prefix_un(word):
-    unword = f"un{word}"
-    return unword
+    prefixed_word = f"un{word}"
+    return prefixed_word
 
 
 def make_word_groups(vocab_words):
@@ -9,10 +9,10 @@ def make_word_groups(vocab_words):
 
 
 def remove_suffix_ness(word):
-    words = word[:-4]
-    if words[-1] == "i":
-        words = words.replace("i", "y")
-    return words
+    root_word = word[:-4]
+    if root_word[-1] == "i":
+        root_word = root_word.replace("i", "y")
+    return root_word
 
 
 def adjective_to_verb(sentence, index):

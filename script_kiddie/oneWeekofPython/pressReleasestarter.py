@@ -6,20 +6,20 @@ Doody Calls, a nationwide leader in dog poop removal services, is growing its fo
 
 # Remove the leading and trailing whitespace (new lines) from press_release
 
-cleanedOne = press_release.strip()
+stripped_release = press_release.strip()
 
 # Replace the phrase "dog poop" with "pet waste" in the press release.  Our research shows "pet waste" tests better than "dog poop"
 
-cleanedTwo = cleanedOne.replace("dog poop", "pet waste")
+pet_waste_release = stripped_release.replace("dog poop", "pet waste")
 
 # We changed our company name! replace the phrase "Doody Calls" with "DoodyCalls" (no space between the words)
 
-cleanedThree = cleanedTwo.replace("Doody Calls", "DoodyCalls")
+renamed_release = pet_waste_release.replace("Doody Calls", "DoodyCalls")
 
 # Our research shows that it's best to shout our press releases. Make the entire press release uppercased!
 
-final = cleanedThree.upper()
+shouted_release = renamed_release.upper()
 
 # Print out the updated press release with all of the above changes:
 
-print(final)
+print(shouted_release)
