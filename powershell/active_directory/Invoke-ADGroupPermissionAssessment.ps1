@@ -1,6 +1,6 @@
 Import-Module ActiveDirectory
 
-$OutputRoot = "C:\BODi_Discovery"
+$OutputRoot = "C:\Discovery"
 New-Item -ItemType Directory -Path $OutputRoot -Force | Out-Null
 
 $staleDate = (Get-Date).AddDays(-90)
