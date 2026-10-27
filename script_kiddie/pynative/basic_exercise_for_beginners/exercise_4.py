@@ -97,7 +97,9 @@ Expected Output:
 tive
 native"""
 
-def remove_chars(user_word, number_start):
-    return user_word[number_start:]
+
+def remove_chars(user_word, chars_to_remove):
+    return user_word[chars_to_remove:]
+
 
 print(remove_chars("pynative", 2))

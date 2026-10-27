@@ -14,13 +14,17 @@ Current Number 2 Previous Number 1 Sum: 3
 Current Number 8 Previous Number 7 Sum: 15
 Current Number 9 Previous Number 8 Sum: 17"""
 
-def function ():
+
+def print_running_sums():
     current_number = 0
     previous_number = 0
-    for i in range(10):
-        sum = current_number + previous_number
-        print(f'Current Number: {current_number} Previous Number {previous_number} Sum: {sum}')
+    for _ in range(10):
+        number_sum = current_number + previous_number
+        print(
+            f"Current Number {current_number} Previous Number {previous_number} Sum: {number_sum}"
+        )
         previous_number = current_number
         current_number += 1
-        
-print(function())
+
+
+print(print_running_sums())

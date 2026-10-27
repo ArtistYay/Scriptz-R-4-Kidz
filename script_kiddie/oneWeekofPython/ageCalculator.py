@@ -1,5 +1,5 @@
-userAge = input("Hello, how old are you? (in years): ")
+user_age = input("Hello, how old are you? (in years): ")
 
-userAgeinDays = int(userAge) * 365
+age_in_days = int(user_age) * 365
 
-print(f"You are {userAgeinDays} days old!26")
+print(f"You are {age_in_days} days old!")

@@ -1,13 +1,14 @@
 def convert(number):
-    result = []
+    sounds = []
     if number % 3 == 0:
-        result.append("Pling")
+        sounds.append("Pling")
     if number % 5 == 0:
-        result.append("Plang")
+        sounds.append("Plang")
     if number % 7 == 0:
-        result.append("Plong")
-    elif not result:
+        sounds.append("Plong")
+    elif not sounds:
         return str(number)
-    return "".join(result)
+    return "".join(sounds)
+
 
 print(convert(34))

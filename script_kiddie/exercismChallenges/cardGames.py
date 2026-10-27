@@ -1,3 +1,7 @@
+JACK_VALUE = 11
+ROUNDS_AFTER_CURRENT = 2
+
+
 def get_rounds(number):
     """Create a list containing the current and next two round numbers.
 
@@ -5,13 +9,12 @@ def get_rounds(number):
     :return: list - current round and the two that follow.
     """
 
-    rounds = []
-    rounds.append(number)
+    rounds = [number]
 
-    for item in range(2):
-        item += 1
-        rounds.append(item + number)
+    for offset in range(1, ROUNDS_AFTER_CURRENT + 1):
+        rounds.append(number + offset)
     return rounds
+
 
 def concatenate_rounds(rounds_1, rounds_2):
     """Concatenate two lists of round numbers.
@@ -22,6 +25,7 @@ def concatenate_rounds(rounds_1, rounds_2):
     """
     return rounds_1 + rounds_2
 
+
 def list_contains_round(rounds, number):
     """Check if the list of rounds contains the specified number.
 
@@ -30,14 +34,8 @@ def list_contains_round(rounds, number):
     :return: bool - was the round played?
     """
 
-    for item in range(len(rounds)):
-        for x in rounds:
-            if x == number:
-                return True
-            elif x != number:
-                continue
-    else:
-        return False
+    return any(played_round == number for played_round in rounds)
+
 
 def card_average(hand):
     """Calculate and returns the average card value from the list.
@@ -48,24 +46,47 @@ def card_average(hand):
 
     return sum(hand) / len(hand)
 
-def approx_average_is_average(hand):
-    """Return if the (average of first and last card values) OR ('middle' card) == calculated average.
+
+def first_and_last_average(hand):
+    """Return the average of the first and last card values.
 
     :param hand: list - cards in hand.
-    :return: bool - does one of the approximate averages equal the `true average`?
+    :return: float - average of the first and last cards.
     """
 
-    average = sum(hand) / len(hand)
-    middle_card = hand[len(hand) // 2]
-    first_and_last_average = (hand[0] + hand[-1]) / 2
+    return (hand[0] + hand[-1]) / 2
 
-    if  first_and_last_average == average or middle_card == average:
-        return True
-    else:
-        return False
-    
+
+def middle_card(hand):
+    """Return the card at the middle index of the hand.
+
+    :param hand: list - cards in hand.
+    :return: int - the 'middle' card value.
+    """
+
+    return hand[len(hand) // 2]
+
+
+def approx_average_is_average(hand):
+    """Return if an approximate average equals the calculated average.
+
+    The approximations are the average of the first and last card
+    values, and the 'middle' card value.
+
+    :param hand: list - cards in hand.
+    :return: bool - does one of the approximate averages equal the
+        `true average`?
+    """
+
+    true_average = card_average(hand)
+    middle_value = middle_card(hand)
+    edge_average = first_and_last_average(hand)
+
+    return edge_average == true_average or middle_value == true_average
+
+
 def average_even_is_average_odd(hand):
-    """Return if the (average of even indexed card values) == (average of odd indexed card values).
+    """Return if the even-index average equals the odd-index average.
 
     :param hand: list - cards in hand.
     :return: bool - are even and odd averages equal?
@@ -74,13 +95,10 @@ def average_even_is_average_odd(hand):
     if len(hand) < 2:
         raise ValueError("Hand must contain at least 2 cards.")
 
-    even_cards = hand[::2]  # indices 0, 2, 4, ...
-    odd_cards = hand[1::2]  # indices 1, 3, 5, ...
+    even_index_cards = hand[::2]  # indices 0, 2, 4, ...
+    odd_index_cards = hand[1::2]  # indices 1, 3, 5, ...
 
-    avg_even = sum(even_cards) / len(even_cards)
-    avg_odd = sum(odd_cards) / len(odd_cards)
-
-    return avg_even == avg_odd
+    return card_average(even_index_cards) == card_average(odd_index_cards)
 
 
 def maybe_double_last(hand):
@@ -90,9 +108,6 @@ def maybe_double_last(hand):
     :return: list - hand with Jacks (if present) value doubled.
     """
 
-    if hand[-1] == 11:
-        new_hand = hand[-1] * 2
-        hand[-1] = new_hand
-        return hand
-    else:
-        return hand
+    if hand[-1] == JACK_VALUE:
+        hand[-1] *= 2
+    return hand

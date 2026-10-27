@@ -1,73 +1,86 @@
-"""Store the names of a few of your friends in a list called names. Print 
+# NOTE: This script is not finished yet (Exercises 3-7 and 3-8 are incomplete).
+
+"""Store the names of a few of your friends in a list called names. Print
 each person’s name by accessing each element in the list, one at a time."""
 
-def friends(name_of_friends):
-    for x in name_of_friends:
-        print(x)
 
-peopleIknow = ["Kzar", "Ari", "Morgan"]
+def print_friend_names(friend_names):
+    for friend in friend_names:
+        print(friend)
 
-friends(peopleIknow)
 
-"""Start with the list you used in Exercise 3-1, but instead of just 
-printing each person’s name, print a message to them. The text of each message should be the same, 
-but each message should be personalized with the 
+people_i_know = ["Kzar", "Ari", "Morgan"]
+
+print_friend_names(people_i_know)
+
+"""Start with the list you used in Exercise 3-1, but instead of just
+printing each person’s name, print a message to them. The text of each message should be the same,
+but each message should be personalized with the
 person’s name"""
 
-def friends(name_of_friends):
-    for x in name_of_friends:
-        print(f"{x} is a good friend of mine.")
 
-peopleIknow = ["Kzar", "Ari", "Morgan"]
+def print_friend_messages(friend_names):
+    for friend in friend_names:
+        print(f"{friend} is a good friend of mine.")
 
-friends(peopleIknow)
 
-"""Think of your favorite mode of transportation, such as a 
-motorcycle or a car, and make a list that stores several examples. Use your list 
-to print a series of statements about these items, such as “I would like to own a 
+people_i_know = ["Kzar", "Ari", "Morgan"]
+
+print_friend_messages(people_i_know)
+
+"""Think of your favorite mode of transportation, such as a
+motorcycle or a car, and make a list that stores several examples. Use your list
+to print a series of statements about these items, such as “I would like to own a
 Honda motorcycle."""
 
-def dreamCars (car):
-    for x in car:
-        print(f"I would love to own a {x} one day.")
 
-carsIwant = ["Barbus G Wagon", "Shelby Truck", "Nissan GTR"]
+def print_dream_cars(cars):
+    for car in cars:
+        print(f"I would love to own a {car} one day.")
 
-dreamCars(carsIwant)
 
-"""If you could invite anyone, living or deceased, to dinner, who 
-would you invite? 
+dream_cars = ["Barbus G Wagon", "Shelby Truck", "Nissan GTR"]
 
-Make a list that includes at least three people you’d like to invite to dinner. 
+print_dream_cars(dream_cars)
+
+"""If you could invite anyone, living or deceased, to dinner, who
+would you invite?
+
+Make a list that includes at least three people you’d like to invite to dinner.
 
 Then use your list to print a message to each person, inviting them to dinner."""
 
-IdontCare = ["Micheal Jackson", "God", "The World's Richest Man in the World"]
 
-for x in IdontCare:
-    print(f"Dear {x}, please have dinner with me. Thanks.")
+def send_dinner_invitations(guests):
+    for guest in guests:
+        print(f"Dear {guest}, please have dinner with me. Thanks.")
 
-"""You just heard that one of your guests can’t make the 
-dinner, so you need to send out a new set of invitations. You’ll have to think of 
+
+dinner_guests = ["Micheal Jackson", "God", "The World's Richest Man in the World"]
+
+send_dinner_invitations(dinner_guests)
+
+"""You just heard that one of your guests can’t make the
+dinner, so you need to send out a new set of invitations. You’ll have to think of
 someone else to invite.
 
-• Start with your program from Exercise 3-4. Add a print() call at the end of 
+• Start with your program from Exercise 3-4. Add a print() call at the end of
 your program, stating the name of the guest who can’t make it.
 
-• Modify your list, replacing the name of the guest who can’t make it with the 
+• Modify your list, replacing the name of the guest who can’t make it with the
 name of the new person you are inviting.
 
-• Print a second set of invitation messages, one for each person who is still in 
+• Print a second set of invitation messages, one for each person who is still in
 your list"""
 
-notComingtoDinner = IdontCare.pop(1)
-print(f"{notComingtoDinner} is not coming to dinner.")
+guest_not_coming = dinner_guests.pop(1)
+print(f"{guest_not_coming} is not coming to dinner.")
 
-IdontCare.insert(1, "Jesus Christ")
+dinner_guests.insert(1, "Jesus Christ")
 
-"""You just found a bigger dinner table, so now more space is 
+"""You just found a bigger dinner table, so now more space is
 available. Think of three more guests to invite to dinner.
-• Start with your program from Exercise 3-4 or 3-5. Add a print() call to the 
+• Start with your program from Exercise 3-4 or 3-5. Add a print() call to the
 end of your program, informing people that you found a bigger table.
 • Use insert() to add one new guest to the beginning of your list.
 • Use insert() to add one new guest to the middle of your list.
@@ -76,41 +89,39 @@ end of your program, informing people that you found a bigger table.
 
 print("I found a bigger table!")
 
-IdontCare.insert(0, "Anakin Skywalker")
-IdontCare.insert(2, "Malcolm X")
-IdontCare.append("Random Russain guy")
+dinner_guests.insert(0, "Anakin Skywalker")
+dinner_guests.insert(2, "Malcolm X")
+dinner_guests.append("Random Russain guy")
 
-for x in IdontCare:
-    print(f"Dear {x}, please have dinner with me. Thanks.")
+send_dinner_invitations(dinner_guests)
 
-"""You just found out that your new dinner table won’t 
+"""You just found out that your new dinner table won’t
 arrive in time for the dinner, and now you have space for only two guests.
 
-• Start with your program from Exercise 3-6. Add a new line that prints a 
+• Start with your program from Exercise 3-6. Add a new line that prints a
 message saying that you can invite only two people for dinner.
 
-• Use pop() to remove guests from your list one at a time until only two 
-names remain in your list. Each time you pop a name from your list, print a 
-message to that person letting them know you’re sorry you can’t invite them 
+• Use pop() to remove guests from your list one at a time until only two
+names remain in your list. Each time you pop a name from your list, print a
+message to that person letting them know you’re sorry you can’t invite them
 to dinner.
 
-• Print a message to each of the two people still on your list, letting them 
+• Print a message to each of the two people still on your list, letting them
 know they’re still invited.
 
-• Use del to remove the last two names from your list, so you have an empty 
-list. Print your list to make sure you actually have an empty list at the end of 
+• Use del to remove the last two names from your list, so you have an empty
+list. Print your list to make sure you actually have an empty list at the end of
 your program"""
-
 
 
 """Think of at least five places in the world you’d like to visit.
 
 • Store the locations in a list. Make sure the list is not in alphabetical order.
 
-• Print your list in its original order. Don’t worry about printing the list neatly; 
+• Print your list in its original order. Don’t worry about printing the list neatly;
 just print it as a raw Python list.
 
-• Use sorted() to print your list in alphabetical order without modifying the 
+• Use sorted() to print your list in alphabetical order without modifying the
 actual list.
 
 • Show that your list is still in its original order by printing it.
