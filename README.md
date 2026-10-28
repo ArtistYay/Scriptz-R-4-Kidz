@@ -36,6 +36,22 @@ These need the `ActiveDirectory` module (RSAT) and read access to the domain.
 
 The CIS benchmark templates are not in this repo. They come from CIS under their own license.
 
+### Windows
+
+| Script | What it does |
+|---|---|
+| [Update-WingetPackages.ps1](powershell/windows/Update-WingetPackages.ps1) | Keeps installed software up to date. A scheduled task runs `winget source update` and `winget upgrade --all` at your first sign-in each month: on the 1st if the computer is on, or at the next sign-in after that if it isn't. Logs go to `%LOCALAPPDATA%\WingetMonthlyUpdate`. |
+
+**Setup** (run once, from an Administrator PowerShell):
+
+```powershell
+.\Update-WingetPackages.ps1 -Register     # install the monthly task
+.\Update-WingetPackages.ps1 -Force -WhatIf # dry run: show what would happen
+.\Update-WingetPackages.ps1 -Unregister   # remove the task
+```
+
+To keep an app from being upgraded: `winget pin add --id <PackageId>`
+
 ## KQL
 
 | Folder | What it does |
